@@ -1,1 +1,1 @@
-# PIA-project
+A web system “Mountain Cottage” built as a project for the Programming Internet Applications course. The platform enables renting mountain cottages in Serbia, with three user roles: tourist, cottage owner, and administrator. Features include user registration and authentication, booking management, profile editing, reviews and ratings, cottage management, and admin approval of new accounts. Implemented with Angular and Spring Boot/NodeJS, using relational or NoSQL databases.
