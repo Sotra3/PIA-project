@@ -1,0 +1,29 @@
+<div class="rezervacije-container">
+  <h2>Neobrađene rezervacije</h2>
+  <table class="rezervacije-tabela">
+    <thead>
+      <tr>
+        <th>Početak</th>
+        <th>Kraj</th>
+        <th>Naziv vikendice</th>
+        <th>Mesto</th>
+        <th>Akcije</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(r of rezervacije; track r._id){
+        <tr>
+          <td>{{ formatDatum(r.datumOd) }}</td>
+          <td>{{ formatDatum(r.datumDo) }}</td>
+          <td>{{ r.vikendicaIme }}</td>
+          <td>{{ r.vikendicaMesto }}</td>
+          <td>
+            <button class="potvrdi-btn" (click)="potvrdiRezervaciju(r._id,r.komentarVlasnika)">Potvrdi</button>
+            <button class="odbij-btn" (click)="odbijRezervaciju(r._id,r.komentarVlasnika)">Odbij</button>
+            <input type="text" [(ngModel)]="r.komentarVlasnika" placeholder="Komentar:">
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

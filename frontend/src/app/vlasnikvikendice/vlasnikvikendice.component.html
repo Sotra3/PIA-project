@@ -1,0 +1,47 @@
+<section class="vikendice-wrapper">
+  <h2>Moje vikendice</h2>
+
+  <div class="vikendica-kartica" *ngFor="let v of mojeVikendice">
+    <div class="info">
+      <h3>{{ v.ime }}</h3>
+      <p><strong>Mesto:</strong> {{ v.mesto }}</p>
+      <p><strong>Usluge:</strong> {{ v.usluge }}</p>
+      <p><strong>Cena nocenja leti:</strong> {{ v.cenovnik.letnji }} RSD</p>
+      <p><strong>Cena nocenja zimi:</strong> {{ v.cenovnik.zimski }} RSD</p>
+      <p><strong>Telefon:</strong> {{ v.telefon }}</p>
+      <p><strong>Koordinate:</strong> {{ v.koordinate.x }}, {{ v.koordinate.y }}</p>
+      <div class="slike-sekcija">
+        <strong>Slike:</strong>
+        <div class="slike-grid">
+          @for (slika of v.slike; track $index) {
+            <div class="slika-container">
+              <img [src]="slika" alt="Slika vikendice" class="vikendica-slika">
+              <button class="obrisi-sliku" (click)="obrisiSliku(v._id, $index)">×</button>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="akcije">
+      <button (click)="urediVikendicu(v)">Uredi</button>
+      <button (click)="obrisiVikendicu(v._id)">Obrisi</button>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>Dodaj novu vikendicu:</h3>
+  <form (ngSubmit)="dodajVikendicu()" #forma="ngForm" class="forma-vikendica">
+    Naziv vikendice:<input type="text" name="naziv" [(ngModel)]="nova.ime" required /> 
+    Mesto:<input type="text" name="mesto" [(ngModel)]="nova.mesto"  required />
+    Usluge:<textarea name="usluge" [(ngModel)]="nova.usluge" rows="3"></textarea> 
+    Cena nocenja leti:<input type="number" name="cenaleto" [(ngModel)]="nova.cenovnik.letnji" required />
+    Cena nocenja zimi:<input type="number" name="cenazima" [(ngModel)]="nova.cenovnik.zimski" required />
+    Telefon:<input type="text" name="telefon" [(ngModel)]="nova.telefon" required />
+    X koordinata:<input type="text" name="X" [(ngModel)]="nova.koordinate.x" required />
+    Y koordinata:<input type="text" name="Y" [(ngModel)]="nova.koordinate.y" required />
+    Slike vikendice:<input type="file" name="slike" (change)="uploadSlike($event)" multiple />
+    <button type="submit">Dodaj vikendicu</button>
+  </form>
+
+</section>

@@ -1,0 +1,57 @@
+<header class="app-header">
+  <div class="header-content">
+  <h1 class="app-title">{{ trenutna.ime }} – {{ trenutna.mesto }}</h1>  </div>
+</header>
+<div class="detalji-container">
+  <div class="ocena">
+    <span class="ocena-vrednost">{{ avgOcena(trenutna) }}</span>
+    <span class="zvezdice">
+      @for (i of tempArray; track i) {
+        <span>{{ i < avgOcena(trenutna) ? '★' : '☆' }}</span>
+      }
+    </span>
+  </div>
+
+  <div class="galerija">
+    @for (slika of trenutna.slike; track slika) {
+      <img [src]="slika" alt="slika vikendice" />
+    }
+  </div>
+
+  <div class="info" *ngIf="trenutna.cenovnik">
+    <p><strong>Telefon:</strong> {{ trenutna.telefon }}</p>
+    <p><strong>Letnji cenovnik:</strong> {{ trenutna.cenovnik.letnji }} RSD</p>
+    <p><strong>Zimski cenovnik:</strong> {{ trenutna.cenovnik.zimski }} RSD</p>
+  </div>
+
+  <div class="usluge">
+    <h3>Usluge:</h3>
+    <p>{{ trenutna.usluge }}</p>
+  </div>
+
+  <div class="komentari">
+    <h3>Komentari korisnika:</h3>
+    @for (komentar of trenutna.komentari; track komentar) {
+      <blockquote>{{ komentar }}</blockquote>
+    }
+  </div>
+  
+  <div class="mapa-sekcija">
+  <h3>Lokacija</h3>
+  <div id="map" style="height: 400px; width: 100%; border-radius: 8px;"></div>
+</div>
+
+
+  <div class="dugme-wrapper">
+    <button class="rezervisi-btn" (click)="goBack()">Nazad</button>
+    <button class="rezervisi-btn" (click)="rezervisi()">Rezerviši</button>
+  </div>
+</div>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

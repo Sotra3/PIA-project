@@ -1,0 +1,80 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Registracija</h1>
+  </div>
+</header>
+
+<div class="form-container">
+  <h2>Registracija</h2>
+  <form #form="ngForm" (ngSubmit)="register()" class="form-group">
+    <label class="form-label">Korisničko ime:</label>
+    <input type="text" [(ngModel)]="data.username" name="username" class="form-input" required>
+
+    <label class="form-label">Lozinka:</label>
+    <input type="password" [(ngModel)]="data.password" name="password" class="form-input" required>
+
+    <label class="form-label">Ime:</label>
+    <input type="text" [(ngModel)]="data.firstName" name="firstName" class="form-input" required>
+
+    <label class="form-label">Prezime:</label>
+    <input type="text" [(ngModel)]="data.lastName" name="lastName" class="form-input" required>
+
+    <label class="form-label">Pol:</label>
+    <select [(ngModel)]="data.gender" name="gender" class="form-input" required>
+      <option value="">Pol</option>
+      <option value="M">M</option>
+      <option value="Z">Ž</option>
+    </select>
+
+    <label class="form-label">Adresa:</label>
+    <input type="text" [(ngModel)]="data.address" name="address" class="form-input" required>
+
+    <label class="form-label">Telefon:</label>
+    <input type="text" [(ngModel)]="data.phone" name="phone" class="form-input" required>
+
+    <label class="form-label">Email:</label>
+    <input type="email" [(ngModel)]="data.email" name="email" class="form-input" required>
+
+    <label class="form-label">Slika:</label>
+    <input type="file" (change)="saveImage($event)" name="image" accept=".jpg,.png" class="form-input">
+
+    <label class="form-label">Broj kreditne kartice:</label>
+    <div class="kartica-wrapper">
+      <input
+        type="text"
+        [(ngModel)]="data.creditCard"
+        (ngModelChange)="onCardInput()"
+        placeholder="Unesi broj kartice"
+        name="creditCard"
+        class="form-input"
+        required
+      />
+      <img
+        *ngIf="cardType !== 'unknown'"
+        [src]="'assets/cards/' + cardType + '.png'"
+        class="card-icon"
+      />
+    </div>
+
+    <label class="form-label">Tip korisnika:</label>
+    <select [(ngModel)]="data.type" name="type" class="form-input" required>
+      <option value="">Tip korisnika</option>
+      <option value="vlasnik">Vlasnik</option>
+      <option value="turista">Turista</option>
+    </select>
+
+    <div class="dugmad">
+      <button class="btn-primary" type="submit">Registruj se</button>
+      <button class="btn-primary" type="button" (click)="pocetna()">Pocetna Stranica</button>
+    </div>
+  </form>
+</div>
+
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

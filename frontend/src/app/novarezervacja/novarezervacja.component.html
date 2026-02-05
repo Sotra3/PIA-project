@@ -1,0 +1,56 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Rezervacija Vikendica</h1>
+  </div>
+</header>
+
+
+<div class="container" *ngIf="korak === 1">
+  <h2>Rezervacija</h2>
+
+  <label>Datum i vreme dolaska:</label>
+  <input type="datetime-local" [(ngModel)]="dateOd" />
+
+  <label>Datum i vreme odlaska:</label>
+  <input type="datetime-local" [(ngModel)]="dateDo" />
+
+  <label>Broj odraslih:</label>
+  <input type="number" min="1" [(ngModel)]="brojOdraslih" />
+
+  <label>Broj dece:</label>
+  <input type="number" min="0" [(ngModel)]="brojDece" />
+</div>
+
+<div class="container" *ngIf="korak === 2">
+  <h2>Pregled rezervacije</h2>
+
+  <p><strong>Datum i vreme dolaska:</strong> {{ getFormattedDateOd() }}</p>
+  <p><strong>Datum i vreme odlaska:</strong> {{ getFormattedDateDo() }}</p>
+  <p><strong>Broj odraslih:</strong> {{ brojOdraslih }}</p>
+  <p><strong>Broj dece:</strong> {{ brojDece }}</p>
+
+  <div class="cena">
+  <p><strong>Ukupna cena:</strong> {{ izracunajCenu() }} RSD</p>
+  <div class="kartica-wrapper">
+    <input type="text" [(ngModel)]="kreditnakartica" (ngModelChange)="onCardInput()" placeholder="Broj kartice" />
+    <img *ngIf="cardType !== 'unknown'" [src]="'assets/cards/' + cardType + '.png'" class="card-icon" />
+  </div>
+  <button class="plati" (click)="plati()">Plati</button>
+</div>
+
+  <label>Posebni zahtevi:</label>
+  <textarea [(ngModel)]="zahtevi" maxlength="500" rows="5" placeholder="Unesite dodatne zahteve..."></textarea>
+</div>
+
+<div class="dugmad">
+  <button (click)="nazad()">Nazad</button>
+  <button (click)="sledeci()" *ngIf="korak==1">Sledeći</button>
+</div>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

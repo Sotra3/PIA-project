@@ -1,0 +1,28 @@
+<header class="app-header">
+  <nav class="glavni-meni">
+    <ul>
+      <li> <h1 class="app-title"><a routerLink="/turista/profil" routerLinkActive="aktivno">Profil</a></h1></li>
+      <li> <h1 class="app-title"><a routerLink="/turista/vikendice" routerLinkActive="aktivno">Vikendice</a></h1></li>
+      <li> <h1 class="app-title"><a routerLink="/turista/rezervacije" routerLinkActive="aktivno">Rezervacije</a></h1></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="turista-layout">
+  <main class="sadrzaj">
+    <router-outlet></router-outlet>
+
+    <div class="dugmad-akcije">
+      <button (click)="changePassword()">Promeni lozinku</button>
+      <button (click)="logout()">Odjavi se</button>
+    </div>
+  </main>
+</div>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

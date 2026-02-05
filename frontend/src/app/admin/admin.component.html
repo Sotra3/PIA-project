@@ -1,0 +1,91 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Rezervacija Vikendica</h1>
+  </div>
+</header>
+<section class="admin-wrapper">
+  <div class="korisnici-sekcija">
+    <h3>Vlasnici</h3>
+    <table class="korisnici-tabela">
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Akcije</th>
+      </tr>
+      <tr *ngFor="let v of vlasnici">
+        <td>{{ v.firstName }}</td>
+        <td>{{ v.lastName }}</td>
+        <td>{{ v.email }}</td>
+        <td>{{ v.phone }}</td>
+        <td>
+          <button (click)="izmeniKorisnika(v)">Izmeni</button>
+          <button (click)="deaktivirajKorisnika(v)">Deaktiviraj</button>
+        </td>
+      </tr>
+    </table>
+
+    <h3>Turisti</h3>
+    <table class="korisnici-tabela">
+        <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Akcije</th>
+      </tr>
+      <tr *ngFor="let t of turisti">
+        <td>{{ t.firstName }}</td>
+        <td>{{ t.lastName }}</td>
+        <td>{{ t.email }}</td>
+        <td>{{ t.phone }}</td>
+        <td>
+          <button (click)="izmeniKorisnika(t)">Izmeni</button>
+          <button (click)="deaktivirajKorisnika(t)">Deaktiviraj</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="zahtevi-sekcija">
+    <h3>Zahtevi za registraciju</h3>
+    <table class="zahtevi-tabela">
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Akcije</th>
+      </tr>
+      <tr *ngFor="let z of zahtevi">
+        <td>{{ z.firstName }}</td>
+        <td>{{ z.lastName }}</td>
+        <td>{{ z.email }}</td>
+        <td>{{ z.phone }}</td>
+        <td>
+          <button (click)="prihvatiZahtev(z)">Prihvati</button>
+          <button (click)="odbijZahtev(z)">Odbij</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="vikendice-sekcija">
+    <h3>Vikendice</h3>
+    <table class="vikendice-tabela">
+      <tr>
+        <th>Naziv</th>
+        <th>Mesto</th>
+        <th>Telefon</th>
+        <th>Vlasnik</th>
+      </tr>
+      <tr *ngFor="let v of vikendice">
+        <td>{{ v.ime }}</td>
+        <td>{{ v.mesto }}</td>
+        <td>{{ v.telefon }}</td>
+        <td>{{ v.vlasnik }}</td>
+      </tr>
+    </table>
+  </div>
+</section>

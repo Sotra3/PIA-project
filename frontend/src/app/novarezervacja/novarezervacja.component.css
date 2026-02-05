@@ -1,0 +1,137 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 30%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="datetime-local"],
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3f51b5;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.cena {
+  margin-top: 20px;
+}
+
+.plati {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plati:hover {
+  background-color: #388e3c;
+}
+
+.dugmad {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 30px auto 40px;
+}
+
+.dugmad button {
+  padding: 10px 24px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+}
+
+.dugmad button:hover {
+  background-color: #005fa3;
+}
+
+.card-icon {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+.kartica-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.kartica-wrapper input {
+  flex: 1;
+}
+
+.app-footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .dugmad {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .dugmad button {
+    width: 100%;
+    max-width: 200px;
+  }
+}

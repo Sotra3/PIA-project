@@ -1,0 +1,35 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Prijava</h1>
+  </div>
+</header>
+
+<div class="login-container">
+  <label>Username:</label>
+  <input type="text" [(ngModel)]="username" /><br />
+
+  <label>Password:</label>
+  <input type="password" [(ngModel)]="password" /><br />
+
+  <div class="role-selection">
+    <label>
+      <input type="radio" name="type" [(ngModel)]="type" value="vlasnik" />
+      Vlasnik
+    </label>
+    <label>
+      <input type="radio" name="type" [(ngModel)]="type" value="turista" />
+      Turista
+    </label>
+  </div>
+
+  <button class="login-btn" (click)="login()">Login</button><br />
+</div>
+<button class="home-btn" (click)="pocetna()">Pocetna Stranica</button>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

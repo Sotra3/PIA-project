@@ -1,0 +1,23 @@
+<div class="rezervacije-container">
+  <h2>Aktuelnе Rezervacije</h2>
+  <table class="rezervacije-tabela">
+    <thead>
+      <tr>
+        <th>Početak</th>
+        <th>Kraj</th>
+        <th>Naziv vikendice</th>
+        <th>Mesto</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(r of rezervacije; track $index){
+        <tr>
+        <td>{{formatDatum(r.datumOd)}}</td>
+        <td>{{formatDatum(r.datumDo)}}</td>
+        <td>{{r.vikendicaIme}}</td>
+        <td>{{r.vikendicaMesto}}</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,96 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container {
+  width:30%;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.role-selection {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.role-selection label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+   font-size: 18px; 
+  font-weight: normal;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home-btn{
+  width: 30%;
+  margin: 0 auto;
+  display: block;
+  padding: 12px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #005fa3;
+}
+ .home-btn:hover{
+  background-color: #005fa3;
+ }
+
+.app-footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .home-btn {
+    width: 50%;
+  }
+}

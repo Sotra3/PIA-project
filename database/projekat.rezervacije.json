@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "68ff0895ddcd73f2623aed07"
+  },
+  "datumOd": {
+    "$date": "2025-10-29T16:51:00.000Z"
+  },
+  "datumDo": {
+    "$date": "2025-11-01T04:51:00.000Z"
+  },
+  "brojOdraslih": 2,
+  "brojDece": 0,
+  "zahtevi": "",
+  "korisnik": "filip",
+  "vikendicaIme": "Apartmani \"Divcibare\"",
+  "vikendicaMesto": "Divcibare",
+  "vikendicaVlasnik": "mare",
+  "vikendicaId": "68ff00634d41222c9f7613ad",
+  "status": "odbijena",
+  "datumRezervacje": {
+    "$date": "2025-10-27T05:52:21.937Z"
+  },
+  "komentarVlasnika": "Nije slobodno tad!",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ff08bbddcd73f2623aed0c"
+  },
+  "datumOd": {
+    "$date": "2025-11-17T16:52:00.000Z"
+  },
+  "datumDo": {
+    "$date": "2025-11-27T04:52:00.000Z"
+  },
+  "brojOdraslih": 2,
+  "brojDece": 2,
+  "zahtevi": "",
+  "korisnik": "filip",
+  "vikendicaIme": "Vila Tara",
+  "vikendicaMesto": "Tara",
+  "vikendicaVlasnik": "mare",
+  "vikendicaId": "68ff00074d41222c9f7613aa",
+  "status": "prihvacena",
+  "datumRezervacje": {
+    "$date": "2025-10-27T05:52:59.433Z"
+  },
+  "komentarVlasnika": "Moze!",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ff0afaddcd73f2623aed56"
+  },
+  "datumOd": {
+    "$date": "2025-10-27T17:02:00.000Z"
+  },
+  "datumDo": {
+    "$date": "2026-01-07T05:02:00.000Z"
+  },
+  "brojOdraslih": 2,
+  "brojDece": 2,
+  "zahtevi": "",
+  "korisnik": "luka",
+  "vikendicaIme": "Spa centar Šar-planina",
+  "vikendicaMesto": "Šar-planina",
+  "vikendicaVlasnik": "jana",
+  "vikendicaId": "68ff09cfddcd73f2623aed39",
+  "status": "u obradi",
+  "datumRezervacje": {
+    "$date": "2025-10-27T06:02:34.359Z"
+  },
+  "komentarVlasnika": "",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ff0b16ddcd73f2623aed5b"
+  },
+  "datumOd": {
+    "$date": "2026-01-30T17:02:00.000Z"
+  },
+  "datumDo": {
+    "$date": "2026-02-05T05:02:00.000Z"
+  },
+  "brojOdraslih": 2,
+  "brojDece": 3,
+  "zahtevi": "",
+  "korisnik": "luka",
+  "vikendicaIme": "Ski centar Kopaonik",
+  "vikendicaMesto": "Kopaonik",
+  "vikendicaVlasnik": "jana",
+  "vikendicaId": "68ff0a24ddcd73f2623aed3c",
+  "status": "u obradi",
+  "datumRezervacje": {
+    "$date": "2025-10-27T06:03:02.870Z"
+  },
+  "komentarVlasnika": "",
+  "__v": 0
+}]

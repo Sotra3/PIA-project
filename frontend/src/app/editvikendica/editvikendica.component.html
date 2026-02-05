@@ -1,0 +1,66 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Uredi vikendicu</h1>
+  </div>
+</header>
+<section class="uredi-vikendicu-wrapper">
+  <form (ngSubmit)="sacuvajIzmene()" #forma="ngForm" class="forma-vikendica">
+    <label>
+      Naziv:
+      <input type="text" name="ime" [(ngModel)]="vikendica.ime" required />
+    </label>
+
+    <label>
+      Mesto:
+      <input type="text" name="mesto" [(ngModel)]="vikendica.mesto" required />
+    </label>
+
+    <label>
+      Usluge:
+      <textarea name="usluge" [(ngModel)]="vikendica.usluge" rows="3"></textarea>
+    </label>
+
+    <label>
+      Cena leti:
+      <input type="number" name="letnji" [(ngModel)]="vikendica.cenovnik.letnji" required />
+    </label>
+
+    <label>
+      Cena zimi:
+      <input type="number" name="zimski" [(ngModel)]="vikendica.cenovnik.zimski" required />
+    </label>
+
+    <label>
+      Telefon:
+      <input type="text" name="telefon" [(ngModel)]="vikendica.telefon" required />
+    </label>
+
+    <label>
+      X koordinata:
+      <input type="number" name="x" [(ngModel)]="vikendica.koordinate.x" required />
+    </label>
+
+    <label>
+      Y koordinata:
+      <input type="number" name="y" [(ngModel)]="vikendica.koordinate.y" required />
+    </label>
+
+    <label>
+      Slike:
+      <input type="file" name="slike" (change)="uploadSlike($event)" multiple />
+    </label>
+
+    <div class="dugmad-grupa">
+      <button type="submit">Sačuvaj izmene</button>
+      <button type="button" (click)="goBack()">Otkaži</button>
+    </div>
+  </form>
+</section>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

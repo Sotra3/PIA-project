@@ -1,0 +1,33 @@
+
+<div class="kartica">
+  <h2>Pregled profila</h2>
+
+  <div class="profilna-sekcija">
+    <img [src]="trenutni.profileImage" alt="Profilna" class="profilna-slika" />
+  </div>
+
+  <div class="info-grid">
+    <div class="labela">Ime:</div>
+    <div class="vrednost">{{ trenutni.firstName }}</div>
+
+    <div class="labela">Prezime:</div>
+    <div class="vrednost">{{ trenutni.lastName }}</div>
+
+    <div class="labela">Adresa:</div>
+    <div class="vrednost">{{ trenutni.address }}</div>
+
+    <div class="labela">Email:</div>
+    <div class="vrednost">{{ trenutni.email }}</div>
+
+    <div class="labela">Telefon:</div>
+    <div class="vrednost">{{ trenutni.phone }}</div>
+
+    <div class="labela">Broj kartice:</div>
+    <div class="vrednost">{{ trenutni.creditCard }}</div>
+  </div>
+
+  <div class="dugmad">
+    <button class="btn-primary" (click)="urediPodatke()">Uredi podatke</button>
+  </div>
+</div>
+

@@ -1,0 +1,114 @@
+.vikendice-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.vikendica-kartica {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.vikendica-kartica .info {
+  flex: 1;
+}
+
+.vikendica-kartica .akcije {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.vikendica-kartica button {
+  padding: 8px 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.vikendica-kartica button:hover {
+  background-color: #005fa3;
+}
+
+.forma-vikendica {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.forma-vikendica input,
+.forma-vikendica textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.forma-vikendica button {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.forma-vikendica button:hover {
+  background-color: #218838;
+}
+
+.slike-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slika-container {
+  position: relative;
+  display: inline-block;
+}
+
+.vikendica-slika {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.obrisi-sliku {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.obrisi-sliku:hover {
+  background-color: #c82333;
+}

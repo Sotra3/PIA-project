@@ -1,0 +1,73 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Rezervacija Vikendica</h1>
+  </div>
+</header>
+  <div class="fullscreen-wrapper">
+    <div class="fullscreen-content">
+
+      <div class="button-group">
+        <button (click)="login()">Prijava</button>
+        <button (click)="register()">Registracija</button>
+      </div>
+
+      <div class="divider"></div>
+      <div class="vikendice-section">
+        <h2>Lista vikendica</h2>
+        <table mat-table [dataSource]="allVikendice" matSort class="mat-elevation-z8">
+          <ng-container matColumnDef="ime">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ime</th>
+            <td mat-cell *matCellDef="let v">{{ v.ime }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="mesto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mesto</th>
+            <td mat-cell *matCellDef="let v">{{ v.mesto }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="ocena">
+            <th mat-header-cell *matHeaderCellDef>Ocena</th>
+            <td mat-cell *matCellDef="let v">
+              {{ avgOcena(v) }}
+              @for (i of tempArray; track i) {
+                <span>
+                  {{
+                    i <= avgOcena(v)
+                      ? '★':'☆'
+                  }}
+                </span>
+              }
+            </td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <div class="search">
+          <input type="text" [(ngModel)]="pretragaNaziv"> Naziv:
+        </div>
+        <div class="search">
+          <input type="text" [(ngModel)]="pretragaMesto"> Mesto:
+        </div>
+       <div class="button-group">
+  <button (click)="pretraga()">Pretraga</button>
+  <button (click)="cancel()">Otkaži</button>
+</div>
+      </div>
+       <div class="categories">
+        <p><strong> Broj vlasnika:</strong> {{ numberOfVlasnici }}</p>
+        <p><strong> Broj turista:</strong> {{ numberOfTuristi }}</p>
+        <p><strong> Broj vikendica rezervisano u poslednja 24 časa: </strong>{{last24}}</p>
+        <p><strong> Broj vikendica rezervisano u poslednjih 7 dana: </strong>{{last7}}</p>
+        <p><strong> Broj vikendica rezervisano u poslednjih 30 dana: </strong>{{last30}}</p>
+       </div>
+    </div>
+  </div>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

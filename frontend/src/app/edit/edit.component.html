@@ -1,0 +1,63 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="app-title">Izmeni profil</h1>
+  </div>
+</header>
+
+<div class="forma-kartica">
+  <form #forma="ngForm" enctype="multipart/form-data">
+    <div class="forma-red">
+      <label for="firstName">Ime:</label>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="trenutni.firstName" required />
+    </div>
+
+    <div class="forma-red">
+      <label for="lastName">Prezime:</label>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="trenutni.lastName" required />
+    </div>
+
+    <div class="forma-red">
+      <label for="address">Adresa:</label>
+      <input type="text" id="address" name="address" [(ngModel)]="trenutni.address" />
+    </div>
+
+    <div class="forma-red">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="trenutni.email" required />
+    </div>
+
+    <div class="forma-red">
+      <label for="phone">Telefon:</label>
+      <input type="text" id="phone" name="phone" [(ngModel)]="trenutni.phone" />
+    </div>
+
+    <div class="forma-red">
+      <label for="creditCard">Broj kartice:</label>
+        <div class="card-input">
+      <input type="text" (ngModelChange)="onCardInput($event)" id="creditCard" name="creditCard" [(ngModel)]="trenutni.creditCard" />
+    <img
+    *ngIf="cardType !== 'unknown'"
+    [src]="'assets/cards/' + cardType + '.png'"
+    class="card-icon"
+  />
+        </div>
+    </div>
+    <div class="forma-red">
+      <label for="profileImage">Profilna slika:</label>
+    <input type="file" (change)="saveImage($event)" name="image" accept=".jpg,.png"><br>
+    </div>
+
+    <div class="dugmad-forme">
+      <button (click)="save()">Sačuvaj izmene</button>
+      <button type="button" (click)="goBack()">Otkaži</button>
+    </div>
+  </form>
+</div>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <p>&copy; 2025 Rezervacija Vikendica. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

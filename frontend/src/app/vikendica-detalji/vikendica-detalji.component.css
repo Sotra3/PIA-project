@@ -1,0 +1,152 @@
+:root {
+  --primary-bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --accent: #0077b6;
+  --text-color: #333;
+  --muted: #666;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--primary-bg);
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+}
+
+.detalji-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.ocena {
+  text-align: center;
+  font-size: 24px;
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.ocena-vrednost {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.zvezdice span {
+  font-size: 22px;
+  margin: 0 2px;
+}
+
+.galerija {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.galerija img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.galerija img:hover {
+  transform: scale(1.05);
+}
+
+.info p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.usluge h3,
+.komentari h3 {
+  margin-top: 24px;
+  color: var(--accent);
+}
+
+.komentari blockquote {
+  background: #e9f1f7;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-left: 4px solid var(--accent);
+  font-style: italic;
+  border-radius: 6px;
+}
+
+.detalji-container .dugme-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px; 
+  justify-content: center; 
+}
+
+.rezervisi-btn {
+
+  padding: 10px 16px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rezervisi-btn:hover {
+  background-color: #005f8e;
+  transform: scale(1.03);
+}
+
+.ikonica {
+  font-size: 18px;
+}
+
+.mapa-sekcija {
+  margin: 24px 0;
+}
+
+.mapa-sekcija h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid #ddd;
+}
+
+/* Leaflet popup stilizovanje */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
